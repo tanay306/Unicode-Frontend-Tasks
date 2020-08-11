@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link id="mystylesheet" type="text/css" rel="stylesheet" href="styles/light.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <title>Contact</title>
+  </head>
+
+  <body style="font-family: Arial, Helvetica, sans-serif;">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper" id="navbar">
+          <a id="mine" href="portfolio.html" class="brand-logo center">My Portfolio</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m7" id="form">
+          <div class="card-panel" id="card">
+            <h4 class="flow-text center-align" id="touch">
+              Please fill this form
+            </h4>
+            <div class="input-field">
+              <input type="text" id="name" onblur="validate('text')" required/>
+              <label for="">Enter Name</label>
+              <p id="nameOutput" class="red-text"></p>
+            </div>
+
+            <div class="input-field">
+              <input type="email" id="email" onblur="validate('email')" required/>
+              <label for="">Enter email address</label>
+              <p id="outputEmail" class="red-text"></p>
+            </div>
+            <div class="input-field">
+              <input type="number" id="number" onblur="validate('number')" required/>
+              <label for="">Enter mobile number</label>
+              <p id="outputNo" class="red-text"></p>
+            </div>
+            <button class="btn" style="background-color: rgb(24, 26, 27);"><a href="success.html">Submit</a></button>
+
+            <p id="msg" style="visibility: hidden;">Continue</p>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-action-btn">
+        <a href="index.html" class="btn-flat btn-large red white-text">COVID Mode</a>
+        <br/><br/>
+        <button class="btn-flat btn-large grey lighten-3 black-text" onclick="swapStyle('styles/light.css')">Light Mode</button>
+        <br/><br/>
+        <button class="btn-flat btn-large white-text" style="background-color: rgb(24, 26, 27);" onclick="swapStyle('styles/dark.css')">Dark Mode</button>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(".materialboxed").materialbox();
+      function swapStyle(sheet) {
+        document.getElementById("mystylesheet").href = sheet;
+      }
+      function validate(type) {
+        {
+          if (type == "text") {
+            var first = document.getElementById("name").value;
+            var fNameIdentifier = /^([A-Za-z])+$/g;
+            if (first.length == 0) {
+              return (document.getElementById("nameOutput").innerHTML = "");
+            }
+            if (!first.match(fNameIdentifier)) {
+              document.getElementById("nameOutput").innerHTML =
+                "Your name should contain only alphabets.";
+              setTimeout(() => {
+                document.getElementById("nameOutput").innerHTML = "";
+              }, 5000);
+            }
+          }
+
+          if (type == "number") {
+            var no = document.getElementById("number").value;
+            var noIdentifier = /^[7-9]\d{9}$/g;
+            if (no.length == 0) {
+              return (document.getElementById("outputNo").innerHTML = "");
+            }
+            if (!no.match(noIdentifier)) {
+              document.getElementById("outputNo").innerHTML =
+                "Please enter correct mobile number.";
+              setTimeout(() => {
+                document.getElementById("outputNo").innerHTML = "";
+              }, 5000);
+            }
+          }
+
+          if (type == "email") {
+            var email = document.getElementById("email").value;
+            var emailIdentifier = /^([a-zA-Z0-9_.]+)@([a-zA-Z0-9_.]+)\.([a-zA-Z]{2,5})$/g;
+            if (email.length == 0) {
+              return (document.getElementById("outputEmail").innerHTML = "");
+            }
+            if (!email.match(emailIdentifier)) {
+              document.getElementById("outputEmail").innerHTML =
+                "This is not a valid email address";
+              setTimeout(() => {
+                document.getElementById("outputEmail").innerHTML = "";
+              }, 5000);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="styles/covid.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <title>Covid Mode</title>
+  </head>
+  <body style="background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);">
+    <div class="container">
+      <div class="fixed-action-btn">
+        <a href="portfolio.html" class="btn-flat btn-large white-text" style="background-color: rgb(22, 22, 37);">Back to home</a>
+      </div>
+      <h3 class="center-align white-text" id="title">COVID19</h3>
+      <div class="row">
+        <div class="col s4 m4">
+          <ul class="collection-with-header">
+            <li class="collection-header">
+              <h4 class="flow-text" style="color: #4c75f2;" id="confirmed">Confirmed</h4>
+            </li>
+
+            <i style="color: #4c75f2;" class="material-icons center">check</i>
+            <li class="collection-item" style="color: #4c75f2;" id="total"></li>
+          </ul>
+        </div>
+        <div class="col s4 m4">
+          <ul class="collection-with-header">
+            <li class="collection-header">
+              <h4 class="flow-text" style="color: #28a745;" id="recover">Recovered</h4>
+            </li>
+
+            <i style="color: #28a745;" class="material-icons center">favorite</i>
+            <li class="collection-item" style="color: #28a745;" id="recovered"></li>
+          </ul>
+        </div>
+        <div class="col s4 m4">
+          <ul class="collection-with-header">
+            <li class="collection-header">
+              <h4 class="flow-text" style="color: #ff073a;" id="death">Deaths</h4>
+            </li>
+
+            <i style="color: #ff073a;" class="material-icons">report</i>
+            <li class="collection-item" style="color: #ff073a;" id="deaths"></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="data">
+          <ul class="collection-with-header" id="countries">
+            <li class="collection-header">
+              <h4 class="flow-text" style="color: #a5b100;" id="main">Countries</h4>
+              <i style="color: #a5b100;" class="fa fa-globe small" aria-hidden="true"></i>
+            </li>
+          </ul>
+
+          <ul class="collection-with-header" id="totalCases">
+            <li class="collection-header">
+              <h4 style="color: #4c75f2;" class="flow-text" id="main">Confirmed</h4>
+              <i style="color: #4c75f2;" class="material-icons center">check</i>
+            </li>
+          </ul>
+
+          <ul class="collection-with-header" id="countryRecovered">
+            <li class="collection-header">
+              <h4 style="color: #28a745;" class="flow-text" id="main">Recovered</h4>
+              <i style="color: #28a745;" class="material-icons center">favorite</i>
+            </li>
+          </ul>
+
+          <ul class="collection-with-header" id="countryDeaths">
+            <li class="collection-header">
+              <h4 style="color: #ff073a;" class="flow-text" id="main">Deaths</h4>
+              <i style="color: #ff073a;" class="material-icons">report</i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <script>
+      fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api", {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
+          "x-rapidapi-key":
+            "cf89ecec39msh5876af4b749d20fp1f0082jsnbbc43cc54cd2",
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          document.getElementById("total").innerHTML =
+            data.world_total.total_cases;
+
+          document.getElementById("deaths").innerHTML =
+            data.world_total.total_deaths;
+          document.getElementById("recovered").innerHTML =
+            data.world_total.total_recovered;
+
+          for (i = 0; i <= 215; i++) {
+            //console.log(data.countries_stat[i].country_name);
+            const newCountryRow = document.createElement("li");
+            newCountryRow.className = "collection-item";
+            newCountryRow.innerHTML = `<li style="color: #a5b100;" id='countryName'>${data.countries_stat[i].country_name}</li>`;
+            document.getElementById("countries").append(newCountryRow);
+            const cases = document.createElement("li");
+            cases.className = "collection-item";
+            cases.innerHTML = `<li style="color: #4c75f2;" id="case">${data.countries_stat[i].cases}</li>`;
+            document.getElementById("totalCases").append(cases);
+            const deaths = document.createElement("li");
+            deaths.className = "collection-item";
+            deaths.innerHTML = `<li style="color: #ff073a;" id='died'>${data.countries_stat[i].deaths}</li>`;
+            document.getElementById("countryDeaths").append(deaths);
+            const recovered = document.createElement("li");
+            recovered.className = "collection-header";
+            recovered.innerHTML = `<li style="color: #28a745;" id='recovers'>${data.countries_stat[i].total_recovered}</li>`;
+
+            document.getElementById("countryRecovered").append(recovered);
+          }
+        });
+    </script>
+  </body>
+</html>

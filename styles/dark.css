@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+#navbar {
+  background-color: rgb(24, 26, 27);
+  text-transform: uppercase;
+}
+#name {
+  color: white;
+}
+#follow {
+  color: white;
+}
+
+#github {
+  color: white;
+}
+#about {
+  color: white;
+}
+#aboutme {
+  background-color: rgb(24, 26, 27);
+}
+#myself {
+  color: white;
+}
+#repos {
+  color: white;
+}
+#projects {
+  background-color: rgb(24, 26, 27);
+}
+#title {
+  color: white;
+}
+#project {
+  color: white;
+}
+#icons {
+  background-color: rgb(24, 26, 27);
+}
+#submitBtn {
+  background-color: white;
+}
+#card {
+  background-color: rgb(24, 26, 27);
+}
+#contact {
+  margin-bottom: 20px;
+}
+#touch {
+  color: white;
+}
+#fName,
+#lName,
+#email,
+#number {
+  color: white;
+}
+#btn {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+#number {
+  color: white;
+}
+@media (max-width: 554px) {
+  #myimg {
+    height: 251px;
+  }
+}
+@media (max-width: 522px) {
+  #social {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 458px) {
+  #mine {
+    font-size: 20px;
+
+    position: relative !important;
+  }
+}
+@media (min-width: 601px) {
+  #form {
+    margin-top: 10%;
+    margin-left: 23%;
+  }
+}
+@media (max-width: 600px) {
+  #form {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 450px) {
+  #myimg {
+    height: 350px;
+  }
+  #icons {
+    width: 100px;
+  }
+  #social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 356px) {
+  #myimg {
+    height: 368px;
+  }
+}
+
+@media (max-width: 320px) {
+  #mine {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link id="mystylesheet" type="text/css" rel="stylesheet" href="styles/light.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper" id="navbar" style="background-color: linear-gradient(to right, #434343 0%, black 100%);;">
+          <a id="mine" href="portfolio.html" class="brand-logo center">My Portfolio</a>
+        </div>
+      </nav>
+    </div>
+    <br/>
+    <div class="container">
+      <div class="fixed-action-btn">
+        <a href="index.html" class="btn-flat btn-large red white-text">COVID Mode</a>
+        <br/><br/>
+        <button class="btn-flat btn-large grey lighten-3 grey-text" onclick="swapStyle('styles/light.css')">Light Mode</button>
+        <br/><br/>
+        <button class="btn-flat btn-large white-text" style="background-color: rgb(39, 41, 43);" onclick="swapStyle('styles/dark.css')">Dark Mode</button>
+      </div>
+      <div class="col s12 m6">
+        <div class="card horizontal">
+          <div class="card-stacked" id="icons">
+            <div class="card-title">
+              <h4 class="center-align" id="name">Tanay Gandhi</h4>
+            </div>
+            <div class="card-content">
+              <p class="flow-text" id="myself">I am Tanay Gandhi, Second year student at DJ Sanghvi College of Engineering. I have been learning web developement frontend using bootstrap and materialize and backend using node.js and express.js along with mongoDB.</p>
+            </div>
+            <div class="card-action center" id="social">
+              <a href="https://www.instagram.com/tanay4515/" class="pink-text"><i class="fa fa-instagram fa-3x"></i></a>
+              <a href="https://github.com/tanay306" class="black-text"><i id="github" class="fa fa-github fa-3x"></i></a>
+              <a href="https://www.linkedin.com/in/tanay-gandhi-a0a4b41ab/" class="blue-text"><i class="fa fa-linkedin fa-3x"></i></a>
+            </div>
+          </div>
+          <div class="card-image">
+            <img src="images/tanayg.jpeg" alt="" id="myimg"/>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="center-align" id="repos">
+        My Projects
+      </h3>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-stacked" id="projects">
+              <span class="card-title">
+                <h4 class="center-align" id="title">Expense-Tracker</h4>
+              </span>
+
+              <div class="card-action center">
+                <h6 class="flow-text center-align" id="project">
+                  GitHub link :
+                </h6>
+                <a
+                  href="https://github.com/tanay306/Expense-tracker"
+                  class="black-text"
+                  ><i id="github" class="fa fa-github fa-3x"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-stacked" id="projects">
+              <span class="card-title">
+                <h4 class="center-align" id="title">iVEX</h4>
+              </span>
+              <div class="card-action center">
+                <h6 class="flow-text center-align" id="project">
+                  GitHub link :
+                </h6>
+                <a href="https://github.com/tanay306/Hotel-Management" class="black-text"><i id="github" class="fa fa-github fa-3x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-stacked" id="projects">
+              <span class="card-title">
+                <h4 class="center-align" id="title">E-bazzar</h4>
+              </span>
+
+              <div class="card-action center">
+                <h6 class="flow-text center-align" id="project">
+                  GitHub link :
+                </h6>
+                <a href="https://github.com/tanay306/e-bazaar" class="black-text"><i id="github" class="fa fa-github fa-3x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-stacked" id="projects">
+              <span class="card-title">
+                <h4 class="center-align" id="title">Auth system</h4>
+              </span>
+
+              <div class="card-action center">
+                <h6 class="flow-text center-align" id="project">
+                  GitHub link :
+                </h6>
+                <a
+                  href="https://github.com/tanay306/authentication"
+                  class="black-text"
+                  ><i id="github" class="fa fa-github fa-3x"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <h4 class="center-align" id="touch" style="font-weight: bold;">For more details <a href="contact.html">contact me..</a></h4>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(".materialboxed").materialbox();
+      function swapStyle(sheet) {
+        document.getElementById("mystylesheet").href = sheet;
+      }
+    </script>
+  </body>
+</html>

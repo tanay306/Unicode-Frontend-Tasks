@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: "83%" !important;
+}
+#title {
+  font-size: 50px;
+  font-family: cursive !important;
+  text-decoration: underline !important;
+  color: aqua !important;
+}
+#countryName {
+  margin-top: 10px;
+  font-size: 20px;
+}
+#case,
+#recovers,
+#died {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 1500px) {
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 60px;
+  }
+}
+@media (max-width: 1504px) {
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1376px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.15px;
+  }
+}
+@media (max-width: 1316px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.3px;
+  }
+}
+@media (max-width: 1302px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.44px;
+  }
+}
+@media (max-width: 1284px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.6px;
+  }
+}
+@media (max-width: 1227px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.7px;
+  }
+}
+@media (max-width: 1203px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.85px;
+  }
+}
+@media (max-width: 1164px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.1px;
+  }
+}
+@media (max-width: 1152px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.4px;
+  }
+}
+@media (max-width: 1088px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.55px;
+  }
+}
+@media (max-width: 1030px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.66px;
+  }
+}
+@media (max-width: 1010px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.8px;
+  }
+}
+@media (max-width: 992px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 10.85px;
+  }
+}
+@media (max-width: 955px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.1px;
+  }
+}
+@media (max-width: 948px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.4px;
+  }
+}
+@media (max-width: 900px) {
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 45px;
+  }
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.4px;
+  }
+}
+@media (max-width: 896px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.54px;
+  }
+}
+@media (max-width: 847px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.67px;
+  }
+}
+@media (max-width: 815px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.96px;
+  }
+}
+@media (max-width: 800px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 11.95px;
+  }
+}
+@media (max-width: 772px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 12.2px;
+  }
+}
+@media (max-width: 750px) {
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 40px;
+  }
+}
+@media (max-width: 744px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 12.5px;
+  }
+}
+
+@media (max-width: 730px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 12.78px;
+  }
+}
+@media (max-width: 703px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 12.9px;
+  }
+}
+@media (max-width: 672px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 13.18px;
+  }
+}
+@media (max-width: 663px) {
+  #case,
+  #recovers,
+  #died {
+    margin-top: 13.33px;
+  }
+}
+@media (max-width: 650px) {
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 35px;
+  }
+}
+@media (max-width: 600px) {
+  #title {
+    font-size: 50px;
+  }
+  #confirmed,
+  #recover,
+  #death {
+    font-size: 20px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 30px;
+  }
+}
+@media (max-width: 454px) {
+  #main {
+    font-size: 15px;
+  }
+}
+@media (max-width: 454px) {
+  #title {
+    font-size: 40px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 27px;
+  }
+}
+@media (max-width: 429px) {
+  #confirmed,
+  #recover,
+  #death {
+    font-size: 15px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 24px;
+  }
+}
+@media (max-width: 370px) {
+  #confirmed,
+  #recover,
+  #death {
+    font-size: 13px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 20px;
+  }
+}
+@media (max-width: 326px) {
+  #title {
+    font-size: 30px;
+  }
+  #confirmed,
+  #recover,
+  #death {
+    font-size: 11px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 17px;
+  }
+}
+@media (max-width: 280px) {
+  #confirmed,
+  #recover,
+  #death {
+    font-size: 10px;
+  }
+  #total,
+  #recovered,
+  #deaths {
+    font-size: 15px;
+  }
+}
